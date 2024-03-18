@@ -13,8 +13,7 @@
                 <item
                     android:id="@+id/action_chi_search"
                     android:title="ChiSearch"
-                    app:showAsAction="collapseActionView"
-                    app:actionViewClass="androidx.appcompat.widget.SearchView" />
+                    app:showAsAction="collapseActionView" />
             </menu>
         </item>
 </menu>

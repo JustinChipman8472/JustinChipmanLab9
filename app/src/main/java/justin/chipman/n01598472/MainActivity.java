@@ -1,12 +1,20 @@
 package justin.chipman.n01598472;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -91,6 +99,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             // Handle settings action
             toggleTheme();
             return true;
+        } else if(item.getItemId() == R.id.action_chi_search){
+            showSearchDialog();
+            return true;
         } else {
             return super.onOptionsItemSelected(item);
         }
@@ -163,6 +174,38 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         return super.onPrepareOptionsMenu(menu);
     }
+
+    // Method within MainActivity
+    private void showSearchDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Search");
+
+        View viewInflated = LayoutInflater.from(this).inflate(R.layout.dialog_search, (ViewGroup) findViewById(android.R.id.content), false);
+        final EditText input = viewInflated.findViewById(R.id.search_edit_text);
+
+        builder.setView(viewInflated);
+
+        // Set up the buttons
+        builder.setPositiveButton(android.R.string.search_go, (dialog, which) -> {
+            String searchQuery = input.getText().toString();
+            performSearch(searchQuery);
+            dialog.dismiss();
+            // Hide the keyboard
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(input.getWindowToken(), 0);
+        });
+        builder.setNegativeButton(android.R.string.cancel, (dialog, which) -> dialog.cancel());
+
+        builder.show();
+    }
+
+    private void performSearch(String query) {
+        Intent intent = new Intent(Intent.ACTION_WEB_SEARCH);
+        intent.putExtra(SearchManager.QUERY, query);
+        startActivity(intent);
+
+    }
+
 
 
 

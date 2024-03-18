@@ -11,5 +11,6 @@
     <string name="logout">Logout</string>
     <string name="jus1tin">Jus1tin</string>
     <string name="chip2man">Chip2man</string>
+    <string name="search_hint">Enter search phrase</string>
 
 </resources>
