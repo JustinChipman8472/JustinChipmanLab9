@@ -1,5 +1,6 @@
 package justin.chipman.n01598472;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -55,6 +56,10 @@ public class MainActivity extends AppCompatActivity {
 
         int itemId = menuItem.getItemId();
         if (itemId == R.id.nav_jus1tin) {
+            Intent splashIntent = new Intent(this, JusChiSplash.class);
+            splashIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(splashIntent);
+            finish();
             fragmentClass = Jus1tin.class;
         } else if (itemId == R.id.nav_chip2man) {
             fragmentClass = Chip2man.class;
@@ -96,4 +101,5 @@ public class MainActivity extends AppCompatActivity {
         }
         super.onBackPressed();
     }
+
 }
