@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+        <item android:title="Options"
+            android:id="@+id/action_options"
+            app:showAsAction="always|withText">
+            <menu>
+                <item
+                    android:id="@+id/action_jus_toggle"
+                    android:title="JusToggle"/>
+
+
+                <item
+                    android:id="@+id/action_chi_search"
+                    android:title="ChiSearch"
+                    app:showAsAction="collapseActionView"
+                    app:actionViewClass="androidx.appcompat.widget.SearchView" />
+            </menu>
+        </item>
+</menu>
