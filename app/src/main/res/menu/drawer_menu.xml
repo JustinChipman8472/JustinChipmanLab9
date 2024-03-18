@@ -4,11 +4,11 @@
         <item
             android:id="@+id/nav_jus1tin"
             android:icon="@drawable/ic_home"
-            android:title="Home" />
+            android:title="@string/jus1tin" />
         <item
             android:id="@+id/nav_chip2man"
             android:icon="@drawable/ic_man"
-            android:title="Settings" />
+            android:title="@string/chip2man" />
     </group>
 
 
@@ -19,7 +19,7 @@
             <item
                 android:id="@+id/jusnav_logout"
                 android:icon="@drawable/baseline_exit"
-                android:title="Logout"/>
+                android:title="@string/logout"/>
         </menu>
 
     </item>

@@ -4,5 +4,12 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="navigation_drawer_open">Open</string>
     <string name="navigation_drawer_close">Close</string>
+    <string name="justin_chipman">Justin Chipman</string>
+    <string name="exit_msg">Do you want to exit the app?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="logout">Logout</string>
+    <string name="jus1tin">Jus1tin</string>
+    <string name="chip2man">Chip2man</string>
 
 </resources>
