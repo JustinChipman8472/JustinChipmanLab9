@@ -29,7 +29,7 @@ public class Jus1tin extends Fragment {
     private Button addBtn, saveBtn, deleteBtn;
     private RecyclerView courseRV;
 
-    private CourseAdapter adapter; // Make sure to create an adapter class for RecyclerView
+    private CourseAdapter adapter;
     private ArrayList<CourseModal> courseModalArrayList;
 
     public Jus1tin() {
