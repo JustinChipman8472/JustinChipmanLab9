@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">JustinLab9</string>
+    <string name="exit_msg">Voulez-vous quitter l\'application ?</string>
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+    <string name="logout">Se déconnecter</string>
+</resources>

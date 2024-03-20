@@ -2,46 +2,46 @@
 <resources>
     <string name="app_name">JustinLab9</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="navigation_drawer_open">Open</string>
-    <string name="navigation_drawer_close">Close</string>
-    <string name="justin_chipman">Justin Chipman</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="navigation_drawer_open" translatable="false">Open</string>
+    <string name="navigation_drawer_close" translatable="false">Close</string>
+    <string name="justin_chipman" translatable="false">Justin Chipman</string>
     <string name="exit_msg">Do you want to exit the app?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="logout">Logout</string>
-    <string name="jus1tin">Jus1tin</string>
-    <string name="chip2man">Chip2man</string>
-    <string name="search_hint">Enter search phrase</string>
-    <string name="design_navigation_drawer_app">Design Navigation Drawer app</string>
-    <string name="by_justin_chipman_n01598472">by Justin Chipman N01598472 ©</string>
-    <string name="course_description">COurse Description</string>
-    <string name="course_name">Course Name</string>
-    <string name="file_name">File Name</string>
-    <string name="persistent_file">Persistent File</string>
-    <string name="cache_file">Cache File</string>
-    <string name="create_file">Create File</string>
-    <string name="delete_file">Delete File</string>
-    <string name="file_contents">File Contents</string>
-    <string name="write_file">Write File</string>
-    <string name="read_file">Read File</string>
-    <string name="delete">Delete</string>
-    <string name="add">Add</string>
-    <string name="save">Save</string>
-    <string name="enter_course_description">Enter Course Description</string>
-    <string name="enter_course_name">Enter course Name</string>
-    <string name="n01598472_humber_ca">n01598472@humber.ca</string>
-    <string name="file_s_has_been_created">File %s has been created</string>
-    <string name="file_s_creation_failed">File %s creation failed</string>
-    <string name="file_s_already_exists">File %s already exists</string>
-    <string name="write_to_file_s_failed">Write to file %s failed</string>
-    <string name="write_to_s_successful">Write to %s successful</string>
-    <string name="read_from_file_s_successful">Read from file %s successful</string>
-    <string name="read_from_file_s_failed">Read from file %s failed</string>
-    <string name="file_s_has_been_deleted">File %s has been deleted</string>
-    <string name="file_s_doesn_t_exist">File %s doesn\'t exist</string>
-    <string name="no_data_to_delete">No data to delete.</string>
-    <string name="saved_array_list_to_shared_preferences">Saved Array List to Shared preferences.</string>
-    <string name="search">Search</string>
+    <string name="jus1tin" translatable="false">Jus1tin</string>
+    <string name="chip2man" translatable="false">Chip2man</string>
+    <string name="search_hint" translatable="false">Enter search phrase</string>
+    <string name="design_navigation_drawer_app" translatable="false">Design Navigation Drawer app</string>
+    <string name="by_justin_chipman_n01598472" translatable="false">by Justin Chipman N01598472 ©</string>
+    <string name="course_description" translatable="false">COurse Description</string>
+    <string name="course_name" translatable="false">Course Name</string>
+    <string name="file_name" translatable="false">File Name</string>
+    <string name="persistent_file" translatable="false">Persistent File</string>
+    <string name="cache_file" translatable="false">Cache File</string>
+    <string name="create_file" translatable="false">Create File</string>
+    <string name="delete_file" translatable="false">Delete File</string>
+    <string name="file_contents" translatable="false">File Contents</string>
+    <string name="write_file" translatable="false">Write File</string>
+    <string name="read_file" translatable="false">Read File</string>
+    <string name="delete" translatable="false">Delete</string>
+    <string name="add" translatable="false">Add</string>
+    <string name="save" translatable="false">Save</string>
+    <string name="enter_course_description" translatable="false">Enter Course Description</string>
+    <string name="enter_course_name" translatable="false">Enter course Name</string>
+    <string name="n01598472_humber_ca" translatable="false">n01598472@humber.ca</string>
+    <string name="file_s_has_been_created" translatable="false">File %s has been created</string>
+    <string name="file_s_creation_failed" translatable="false">File %s creation failed</string>
+    <string name="file_s_already_exists" translatable="false">File %s already exists</string>
+    <string name="write_to_file_s_failed" translatable="false">Write to file %s failed</string>
+    <string name="write_to_s_successful" translatable="false">Write to %s successful</string>
+    <string name="read_from_file_s_successful" translatable="false">Read from file %s successful</string>
+    <string name="read_from_file_s_failed" translatable="false">Read from file %s failed</string>
+    <string name="file_s_has_been_deleted" translatable="false">File %s has been deleted</string>
+    <string name="file_s_doesn_t_exist" translatable="false">File %s doesn\'t exist</string>
+    <string name="no_data_to_delete" translatable="false">No data to delete.</string>
+    <string name="saved_array_list_to_shared_preferences" translatable="false">Saved Array List to Shared preferences.</string>
+    <string name="search" translatable="false">Search</string>
 
 </resources>
