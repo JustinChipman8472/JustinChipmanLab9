@@ -1,3 +1,4 @@
+<!-- justin chipman n01598472 -->
 <resources>
     <string name="app_name">JustinLab9</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -12,5 +13,6 @@
     <string name="jus1tin">Jus1tin</string>
     <string name="chip2man">Chip2man</string>
     <string name="search_hint">Enter search phrase</string>
+    <string name="design_navigation_drawer_app">Design Navigation Drawer app</string>
 
 </resources>

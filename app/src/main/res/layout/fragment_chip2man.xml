@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- justin chipman n01598472 -->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
@@ -44,13 +45,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Create File"
-            android:id="@+id/activity_internalstorage_create"/>
+            android:id="@+id/jusactivity_internalstorage_create"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Delete File"
-            android:id="@+id/activity_internalstorage_delete"/>
+            android:id="@+id/jusactivity_internalstorage_delete"/>
 
     </LinearLayout>
 
@@ -70,7 +71,7 @@
             android:layout_width="0dp"
             android:layout_weight="0.75"
             android:layout_height="wrap_content"
-            android:id="@+id/activity_internalstorage_filecontents"
+            android:id="@+id/jusactivity_internalstorage_filecontents"
             android:lines="5"
             android:scrollbars="vertical"/>
 
@@ -86,13 +87,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Write File"
-            android:id="@+id/activity_internalstorage_write"/>
+            android:id="@+id/jusactivity_internalstorage_write"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Read File"
-            android:id="@+id/activity_internalstorage_read"/>
+            android:id="@+id/jusactivity_internalstorage_read"/>
 
 
     </LinearLayout>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Root layout with a light color background -->
+<!-- justin chipman n01598472 -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,29 +7,29 @@
 
     <!-- ImageView for the app icon -->
     <ImageView
-        android:id="@+id/splash_image"
+        android:id="@+id/jussplash_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:src="@mipmap/ic_launcher" /> <!-- Replace with your actual image resource -->
+        android:src="@mipmap/ic_launcher_asta_round" />
 
     <!-- TextView for the app and developer name -->
     <TextView
-        android:id="@+id/splash_text"
+        android:id="@+id/jussplash_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/splash_image"
+        android:layout_below="@id/jussplash_image"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="Design Navigation Drawer app"
+        android:text="@string/design_navigation_drawer_app"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <!-- TextView for the student ID -->
     <TextView
-        android:id="@+id/student_id"
+        android:id="@+id/jusstudent_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/splash_text"
+        android:layout_below="@id/jussplash_text"
         android:layout_centerHorizontal="true"
         android:text="by Justin Chipman N01598472 ©"
         android:textAppearance="?android:attr/textAppearanceSmall"

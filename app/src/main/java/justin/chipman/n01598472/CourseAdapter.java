@@ -1,3 +1,4 @@
+// justin chipman n01598472
 package justin.chipman.n01598472;
 
 import android.content.Context;
@@ -54,8 +55,8 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
             super(itemView);
 
             // initializing our views with their ids.
-            courseNameTV = itemView.findViewById(R.id.idTVCourseName);
-            courseDescTV = itemView.findViewById(R.id.idTVCourseDescription);
+            courseNameTV = itemView.findViewById(R.id.jusidTVCourseName);
+            courseDescTV = itemView.findViewById(R.id.jusidTVCourseDescription);
         }
     }
 }

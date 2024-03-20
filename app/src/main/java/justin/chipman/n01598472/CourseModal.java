@@ -1,3 +1,4 @@
+// justin chipman n01598472
 package justin.chipman.n01598472;
 
 public class CourseModal {

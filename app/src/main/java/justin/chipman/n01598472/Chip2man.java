@@ -1,3 +1,4 @@
+// justin chipman n01598472
 package justin.chipman.n01598472;
 
 import android.content.Context;
@@ -39,33 +40,33 @@ public class Chip2man extends Fragment {
         View view = inflater.inflate(R.layout.fragment_chip2man, container, false);
 
         fileName = view.findViewById(R.id.activity_internalstorage_filename);
-        fileContents = view.findViewById(R.id.activity_internalstorage_filecontents);
+        fileContents = view.findViewById(R.id.jusactivity_internalstorage_filecontents);
 
         fileType = view.findViewById(R.id.activity_internalstorage_filetype);
         fileType.setChecked(true);
 
-        view.findViewById(R.id.activity_internalstorage_create).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.jusactivity_internalstorage_create).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 createFile(fileType.isChecked());
             }
         });
 
-        view.findViewById(R.id.activity_internalstorage_delete).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.jusactivity_internalstorage_delete).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 deleteFile(fileType.isChecked());
             }
         });
 
-        view.findViewById(R.id.activity_internalstorage_write).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.jusactivity_internalstorage_write).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 writeFile(fileType.isChecked());
             }
         });
 
-        view.findViewById(R.id.activity_internalstorage_read).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.jusactivity_internalstorage_read).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 readFile(fileType.isChecked());

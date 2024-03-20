@@ -1,12 +1,13 @@
+<!-- justin chipman n01598472 -->
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group
         android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_jus1tin"
+            android:id="@+id/jusnav_jus1tin"
             android:icon="@drawable/ic_home"
             android:title="@string/jus1tin" />
         <item
-            android:id="@+id/nav_chip2man"
+            android:id="@+id/jusnav_chip2man"
             android:icon="@drawable/ic_man"
             android:title="@string/chip2man" />
     </group>

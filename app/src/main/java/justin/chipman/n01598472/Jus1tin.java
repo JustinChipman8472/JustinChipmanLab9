@@ -1,3 +1,4 @@
+// justin chipman n01598472
 package justin.chipman.n01598472;
 
 import android.content.Context;
@@ -10,7 +11,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -39,12 +39,12 @@ public class Jus1tin extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_jus1tin, container, false);
 
-        courseNameEdt = view.findViewById(R.id.idEdtCourseName);
-        courseDescEdt = view.findViewById(R.id.idEdtCourseDescription);
-        addBtn = view.findViewById(R.id.idBtnAdd);
-        saveBtn = view.findViewById(R.id.idBtnSave);
-        deleteBtn = view.findViewById(R.id.idBtnDelete);
-        courseRV = view.findViewById(R.id.idRVCourses);
+        courseNameEdt = view.findViewById(R.id.jusidEdtCourseName);
+        courseDescEdt = view.findViewById(R.id.jusidEdtCourseDescription);
+        addBtn = view.findViewById(R.id.jusidBtnAdd);
+        saveBtn = view.findViewById(R.id.jusidBtnSave);
+        deleteBtn = view.findViewById(R.id.jusidBtnDelete);
+        courseRV = view.findViewById(R.id.jusidRVCourses);
 
         loadData();
         buildRecyclerView();

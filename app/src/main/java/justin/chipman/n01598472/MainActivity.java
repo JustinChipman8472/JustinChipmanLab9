@@ -1,3 +1,4 @@
+// justin chipman n01598472
 package justin.chipman.n01598472;
 
 import android.app.SearchManager;
@@ -15,9 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.activity.OnBackPressedCallback;
 import androidx.activity.OnBackPressedDispatcher;
 import androidx.annotation.NonNull;
@@ -26,10 +25,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.graphics.Insets;
 import androidx.core.view.GravityCompat;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
@@ -60,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
 
         if (savedInstanceState == null) {
-            navigationView.setCheckedItem(R.id.nav_jus1tin);
+            navigationView.setCheckedItem(R.id.jusnav_jus1tin);
             getSupportFragmentManager().beginTransaction().replace(R.id.jusfragment_container,
                     new Jus1tin()).commit();
         }
@@ -95,11 +91,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.action_jus_toggle) {
+        if (item.getItemId() == R.id.jusaction_jus_toggle) {
             // Handle settings action
             toggleTheme();
             return true;
-        } else if(item.getItemId() == R.id.action_chi_search){
+        } else if(item.getItemId() == R.id.jusaction_chi_search){
             showSearchDialog();
             return true;
         } else {
@@ -111,9 +107,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int itemId = item.getItemId();
 
-        if (itemId == R.id.nav_jus1tin) {
+        if (itemId == R.id.jusnav_jus1tin) {
+            launchSplash();
             getSupportFragmentManager().beginTransaction().replace(R.id.jusfragment_container, new Jus1tin()).commit();
-        } else if (itemId == R.id.nav_chip2man) {
+        } else if (itemId == R.id.jusnav_chip2man) {
             getSupportFragmentManager().beginTransaction().replace(R.id.jusfragment_container, new Chip2man()).commit();
         } else if (itemId == R.id.jusnav_logout) {
             showExitConfirmationDialog();
@@ -160,8 +157,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-        MenuItem toggleItem = menu.findItem(R.id.action_jus_toggle);
-        MenuItem searchItem = menu.findItem(R.id.action_chi_search);
+        MenuItem toggleItem = menu.findItem(R.id.jusaction_jus_toggle);
+        MenuItem searchItem = menu.findItem(R.id.jusaction_chi_search);
 
         int textColor = getResources().getColor(R.color.menu_text_color);
         SpannableString sToggle = new SpannableString(toggleItem.getTitle());
@@ -175,13 +172,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return super.onPrepareOptionsMenu(menu);
     }
 
-    // Method within MainActivity
+
     private void showSearchDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Search");
 
         View viewInflated = LayoutInflater.from(this).inflate(R.layout.dialog_search, (ViewGroup) findViewById(android.R.id.content), false);
-        final EditText input = viewInflated.findViewById(R.id.search_edit_text);
+        final EditText input = viewInflated.findViewById(R.id.jussearch_edit_text);
 
         builder.setView(viewInflated);
 
@@ -204,6 +201,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         intent.putExtra(SearchManager.QUERY, query);
         startActivity(intent);
 
+    }
+
+    private void launchSplash() {
+        // Start the splash screen activity
+        Intent splashIntent = new Intent(this, JusChiSplash.class);
+        splashIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(splashIntent);
+        finish(); // Close the current activity
     }
 
 

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- justin chipman n01598472 -->
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,30 +9,30 @@
 
     <!--edit text for adding course name-->
     <EditText
-        android:id="@+id/idEdtCourseName"
+        android:id="@+id/jusidEdtCourseName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toStartOf="@id/idBtnSave"
-        android:layout_toLeftOf="@id/idBtnSave"
+        android:layout_toStartOf="@id/jusidBtnSave"
+        android:layout_toLeftOf="@id/jusidBtnSave"
         android:hint="Enter course Name" />
 
     <!--edit text for adding course description-->
     <EditText
-        android:id="@+id/idEdtCourseDescription"
+        android:id="@+id/jusidEdtCourseDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/idEdtCourseName"
+        android:layout_below="@id/jusidEdtCourseName"
         android:layout_marginEnd="4dp"
         android:layout_marginRight="4dp"
-        android:layout_toLeftOf="@id/idBtnAdd"
+        android:layout_toLeftOf="@id/jusidBtnAdd"
         android:hint="Enter Course Description" />
 
     <!--button for adding data to recycler view-->
     <Button
-        android:id="@+id/idBtnAdd"
+        android:id="@+id/jusidBtnAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/idEdtCourseName"
+        android:layout_below="@id/jusidEdtCourseName"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_margin="10dp"
@@ -39,7 +40,7 @@
 
     <!--button for saving data to shared prefs-->
     <Button
-        android:id="@+id/idBtnSave"
+        android:id="@+id/jusidBtnSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -48,18 +49,18 @@
         android:text="Save " />
 
     <Button
-        android:id="@+id/idBtnDelete"
+        android:id="@+id/jusidBtnDelete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/idEdtCourseDescription"
+        android:layout_below="@id/jusidEdtCourseDescription"
         android:layout_margin="10dp"
         android:text="Delete" />
 
     <!--recycler view to display our data-->
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/idRVCourses"
+        android:id="@+id/jusidRVCourses"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/idBtnDelete" />
+        android:layout_below="@id/jusidBtnDelete" />
 
 </RelativeLayout>
