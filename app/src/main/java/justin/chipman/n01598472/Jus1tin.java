@@ -1,64 +1,117 @@
 package justin.chipman.n01598472;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Jus1tin#newInstance} factory method to
- * create an instance of this fragment.
- */
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+
 public class Jus1tin extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private EditText courseNameEdt, courseDescEdt;
+    private Button addBtn, saveBtn, deleteBtn;
+    private RecyclerView courseRV;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private CourseAdapter adapter; // Make sure to create an adapter class for RecyclerView
+    private ArrayList<CourseModal> courseModalArrayList;
 
     public Jus1tin() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Jus1tin.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Jus1tin newInstance(String param1, String param2) {
-        Jus1tin fragment = new Jus1tin();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_jus1tin, container, false);
+        View view = inflater.inflate(R.layout.fragment_jus1tin, container, false);
+
+        courseNameEdt = view.findViewById(R.id.idEdtCourseName);
+        courseDescEdt = view.findViewById(R.id.idEdtCourseDescription);
+        addBtn = view.findViewById(R.id.idBtnAdd);
+        saveBtn = view.findViewById(R.id.idBtnSave);
+        deleteBtn = view.findViewById(R.id.idBtnDelete);
+        courseRV = view.findViewById(R.id.idRVCourses);
+
+        loadData();
+        buildRecyclerView();
+
+        addBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                courseModalArrayList.add(new CourseModal(courseNameEdt.getText().toString(), courseDescEdt.getText().toString()));
+                adapter.notifyItemInserted(courseModalArrayList.size());
+            }
+        });
+
+        saveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                saveData();
+            }
+        });
+
+        deleteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Check if the list is empty
+                if (!courseModalArrayList.isEmpty()) {
+                    // Clear the list
+                    courseModalArrayList.clear();
+                    // Notify the adapter to update the RecyclerView
+                    adapter.notifyDataSetChanged();
+                    // Save the empty list to SharedPreferences
+                    saveData();
+                } else {
+                    // Show a toast message if there's nothing to delete
+                    Toast.makeText(getContext(), "No data to delete.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        return view;
+    }
+
+    private void buildRecyclerView() {
+        adapter = new CourseAdapter(courseModalArrayList, getContext());
+        LinearLayoutManager manager = new LinearLayoutManager(getContext());
+        courseRV.setHasFixedSize(true);
+        courseRV.setLayoutManager(manager);
+        courseRV.setAdapter(adapter);
+    }
+
+    private void loadData() {
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("shared preferences", Context.MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json = sharedPreferences.getString("courses", null);
+        Type type = new TypeToken<ArrayList<CourseModal>>() {}.getType();
+        courseModalArrayList = gson.fromJson(json, type);
+
+        if (courseModalArrayList == null) {
+            courseModalArrayList = new ArrayList<>();
+        }
+    }
+
+    private void saveData() {
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("shared preferences", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(courseModalArrayList);
+        editor.putString("courses", json);
+        editor.apply();
+        Toast.makeText(getContext(), "Saved Array List to Shared preferences.", Toast.LENGTH_SHORT).show();
     }
 }
