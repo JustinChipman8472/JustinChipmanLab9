@@ -33,6 +33,8 @@ import com.google.android.material.navigation.NavigationView;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private DrawerLayout drawer;
+    private final String themePrefKey = "ThemePref";
+    private final String darkModeKey = "darkmode";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,8 +75,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-        SharedPreferences sharedPreferences = getSharedPreferences("ThemePref", MODE_PRIVATE);
-        boolean isDarkMode = sharedPreferences.getBoolean("DarkMode", false);
+        SharedPreferences sharedPreferences = getSharedPreferences(themePrefKey, MODE_PRIVATE);
+        boolean isDarkMode = sharedPreferences.getBoolean(darkModeKey, false);
 
         if (isDarkMode) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
@@ -143,15 +145,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void toggleTheme() {
         // Check the current theme mode and toggle it
-        SharedPreferences sharedPreferences = getSharedPreferences("ThemePref", MODE_PRIVATE);
-        boolean isDarkMode = sharedPreferences.getBoolean("DarkMode", false);
+        SharedPreferences sharedPreferences = getSharedPreferences(themePrefKey, MODE_PRIVATE);
+        boolean isDarkMode = sharedPreferences.getBoolean(darkModeKey, false);
 
         if (isDarkMode) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-            sharedPreferences.edit().putBoolean("DarkMode", false).apply();
+            sharedPreferences.edit().putBoolean(darkModeKey, false).apply();
         } else {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-            sharedPreferences.edit().putBoolean("DarkMode", true).apply();
+            sharedPreferences.edit().putBoolean(darkModeKey, true).apply();
         }
     }
 
@@ -175,7 +177,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void showSearchDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Search");
+        builder.setTitle(getString(R.string.search));
 
         View viewInflated = LayoutInflater.from(this).inflate(R.layout.dialog_search, (ViewGroup) findViewById(android.R.id.content), false);
         final EditText input = viewInflated.findViewById(R.id.jussearch_edit_text);

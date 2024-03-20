@@ -22,6 +22,8 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 public class Jus1tin extends Fragment {
+    private final String sharedPrefKey = "shared preferences";
+    private final String courseKey = "courses";
 
     private EditText courseNameEdt, courseDescEdt;
     private Button addBtn, saveBtn, deleteBtn;
@@ -77,7 +79,7 @@ public class Jus1tin extends Fragment {
                     saveData();
                 } else {
                     // Show a toast message if there's nothing to delete
-                    Toast.makeText(getContext(), "No data to delete.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), getString(R.string.no_data_to_delete), Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -94,9 +96,9 @@ public class Jus1tin extends Fragment {
     }
 
     private void loadData() {
-        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("shared preferences", Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(sharedPrefKey, Context.MODE_PRIVATE);
         Gson gson = new Gson();
-        String json = sharedPreferences.getString("courses", null);
+        String json = sharedPreferences.getString(courseKey, null);
         Type type = new TypeToken<ArrayList<CourseModal>>() {}.getType();
         courseModalArrayList = gson.fromJson(json, type);
 
@@ -106,12 +108,12 @@ public class Jus1tin extends Fragment {
     }
 
     private void saveData() {
-        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("shared preferences", Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(sharedPrefKey, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         Gson gson = new Gson();
         String json = gson.toJson(courseModalArrayList);
-        editor.putString("courses", json);
+        editor.putString(courseKey, json);
         editor.apply();
-        Toast.makeText(getContext(), "Saved Array List to Shared preferences.", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), getString(R.string.saved_array_list_to_shared_preferences), Toast.LENGTH_SHORT).show();
     }
 }

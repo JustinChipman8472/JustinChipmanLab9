@@ -86,19 +86,24 @@ public class Chip2man extends Fragment {
         }
 
         if (!file.exists()) {
+            String input;
             try {
+                input = getString(R.string.file_s_has_been_created);
                 file.createNewFile();
-                Toast.makeText(context, String.format("File %s has been created", fileName.getText().toString()), Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, String.format(input, fileName.getText().toString()), Toast.LENGTH_SHORT).show();
             } catch (IOException e) {
-                Toast.makeText(context, String.format("File %s creation failed", fileName.getText().toString()), Toast.LENGTH_SHORT).show();
+                input = getString(R.string.file_s_creation_failed);
+                Toast.makeText(context, String.format(input, fileName.getText().toString()), Toast.LENGTH_SHORT).show();
             }
         } else {
-            Toast.makeText(context, String.format("File %s already exists", fileName.getText().toString()), Toast.LENGTH_SHORT).show();
+            String input = getString(R.string.file_s_already_exists);
+            Toast.makeText(context, String.format(input, fileName.getText().toString()), Toast.LENGTH_SHORT).show();
         }
     }
 
     private void writeFile(boolean isPersistent) {
         Context context = getContext();
+        String input;
         try {
             FileOutputStream fileOutputStream;
             if (isPersistent) {
@@ -107,16 +112,19 @@ public class Chip2man extends Fragment {
                 File file = new File(context.getCacheDir(), fileName.getText().toString());
                 fileOutputStream = new FileOutputStream(file);
             }
+            input = getString(R.string.write_to_s_successful);
             fileOutputStream.write(fileContents.getText().toString().getBytes(Charset.forName("UTF-8")));
-            Toast.makeText(context, String.format("Write to %s successful", fileName.getText().toString()), Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, String.format(input, fileName.getText().toString()), Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             e.printStackTrace();
-            Toast.makeText(context, String.format("Write to file %s failed", fileName.getText().toString()), Toast.LENGTH_SHORT).show();
+            input = getString(R.string.write_to_file_s_failed);
+            Toast.makeText(context, String.format(input, fileName.getText().toString()), Toast.LENGTH_SHORT).show();
         }
     }
 
     private void readFile(boolean isPersistent) {
         Context context = getContext();
+        String input;
         try {
             FileInputStream fileInputStream;
             if (isPersistent) {
@@ -135,10 +143,12 @@ public class Chip2man extends Fragment {
                 line = reader.readLine();
             }
             fileContents.setText(TextUtils.join("\n", lines));
-            Toast.makeText(context, String.format("Read from file %s successful", fileName.getText().toString()), Toast.LENGTH_SHORT).show();
+            input = getString(R.string.read_from_file_s_successful);
+            Toast.makeText(context, String.format(input, fileName.getText().toString()), Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             e.printStackTrace();
-            Toast.makeText(context, String.format("Read from file %s failed", fileName.getText().toString()), Toast.LENGTH_SHORT).show();
+            input = getString(R.string.read_from_file_s_failed);
+            Toast.makeText(context, String.format(input, fileName.getText().toString()), Toast.LENGTH_SHORT).show();
             fileContents.setText("");
 
         }
@@ -146,6 +156,7 @@ public class Chip2man extends Fragment {
 
     private void deleteFile(boolean isPersistent) {
         Context context = getContext();
+        String input;
         File file;
         if (isPersistent) {
             file = new File(context.getFilesDir(), fileName.getText().toString());
@@ -154,9 +165,11 @@ public class Chip2man extends Fragment {
         }
         if (file.exists()) {
             file.delete();
-            Toast.makeText(context, String.format("File %s has been deleted", fileName.getText().toString()), Toast.LENGTH_SHORT).show();
+            input = getString(R.string.file_s_has_been_deleted);
+            Toast.makeText(context, String.format(input, fileName.getText().toString()), Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(context, String.format("File %s doesn't exist", fileName.getText().toString()), Toast.LENGTH_SHORT).show();
+            input = getString(R.string.file_s_doesn_t_exist);
+            Toast.makeText(context, String.format(input, fileName.getText().toString()), Toast.LENGTH_SHORT).show();
         }
     }
 }

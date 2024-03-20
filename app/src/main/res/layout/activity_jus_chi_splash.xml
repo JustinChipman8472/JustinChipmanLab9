@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/jussplash_text"
         android:layout_centerHorizontal="true"
-        android:text="by Justin Chipman N01598472 ©"
+        android:text="@string/by_justin_chipman_n01598472"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:layout_marginTop="10dp" />
 </RelativeLayout>

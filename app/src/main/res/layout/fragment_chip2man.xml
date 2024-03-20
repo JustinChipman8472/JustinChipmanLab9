@@ -16,7 +16,7 @@
             android:layout_width="0dp"
             android:layout_weight="0.25"
             android:layout_height="wrap_content"
-            android:text="File Name"
+            android:text="@string/file_name"
             android:gravity="center_horizontal"/>
 
         <EditText
@@ -29,8 +29,8 @@
             android:layout_width="0dp"
             android:layout_weight="0.35"
             android:layout_height="wrap_content"
-            android:textOn="Persistent File"
-            android:textOff="Cache File"
+            android:textOn="@string/persistent_file"
+            android:textOff="@string/cache_file"
             android:id="@+id/activity_internalstorage_filetype"/>
 
     </LinearLayout>
@@ -44,13 +44,13 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Create File"
+            android:text="@string/create_file"
             android:id="@+id/jusactivity_internalstorage_create"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Delete File"
+            android:text="@string/delete_file"
             android:id="@+id/jusactivity_internalstorage_delete"/>
 
     </LinearLayout>
@@ -64,7 +64,7 @@
             android:layout_width="0dp"
             android:layout_weight="0.25"
             android:layout_height="wrap_content"
-            android:text="File Contents"
+            android:text="@string/file_contents"
             android:gravity="center_horizontal" />
 
         <EditText
@@ -86,13 +86,13 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Write File"
+            android:text="@string/write_file"
             android:id="@+id/jusactivity_internalstorage_write"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Read File"
+            android:text="@string/read_file"
             android:id="@+id/jusactivity_internalstorage_read"/>
 
 

@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_toStartOf="@id/jusidBtnSave"
         android:layout_toLeftOf="@id/jusidBtnSave"
-        android:hint="Enter course Name" />
+        android:hint="@string/enter_course_name" />
 
     <!--edit text for adding course description-->
     <EditText
@@ -25,7 +25,7 @@
         android:layout_marginEnd="4dp"
         android:layout_marginRight="4dp"
         android:layout_toLeftOf="@id/jusidBtnAdd"
-        android:hint="Enter Course Description" />
+        android:hint="@string/enter_course_description" />
 
     <!--button for adding data to recycler view-->
     <Button
@@ -36,7 +36,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_margin="10dp"
-        android:text="Add " />
+        android:text="@string/add" />
 
     <!--button for saving data to shared prefs-->
     <Button
@@ -46,7 +46,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_margin="10dp"
-        android:text="Save " />
+        android:text="@string/save" />
 
     <Button
         android:id="@+id/jusidBtnDelete"
@@ -54,7 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/jusidEdtCourseDescription"
         android:layout_margin="10dp"
-        android:text="Delete" />
+        android:text="@string/delete" />
 
     <!--recycler view to display our data-->
     <androidx.recyclerview.widget.RecyclerView

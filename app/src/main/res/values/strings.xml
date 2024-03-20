@@ -14,5 +14,34 @@
     <string name="chip2man">Chip2man</string>
     <string name="search_hint">Enter search phrase</string>
     <string name="design_navigation_drawer_app">Design Navigation Drawer app</string>
+    <string name="by_justin_chipman_n01598472">by Justin Chipman N01598472 ©</string>
+    <string name="course_description">COurse Description</string>
+    <string name="course_name">Course Name</string>
+    <string name="file_name">File Name</string>
+    <string name="persistent_file">Persistent File</string>
+    <string name="cache_file">Cache File</string>
+    <string name="create_file">Create File</string>
+    <string name="delete_file">Delete File</string>
+    <string name="file_contents">File Contents</string>
+    <string name="write_file">Write File</string>
+    <string name="read_file">Read File</string>
+    <string name="delete">Delete</string>
+    <string name="add">Add</string>
+    <string name="save">Save</string>
+    <string name="enter_course_description">Enter Course Description</string>
+    <string name="enter_course_name">Enter course Name</string>
+    <string name="n01598472_humber_ca">n01598472@humber.ca</string>
+    <string name="file_s_has_been_created">File %s has been created</string>
+    <string name="file_s_creation_failed">File %s creation failed</string>
+    <string name="file_s_already_exists">File %s already exists</string>
+    <string name="write_to_file_s_failed">Write to file %s failed</string>
+    <string name="write_to_s_successful">Write to %s successful</string>
+    <string name="read_from_file_s_successful">Read from file %s successful</string>
+    <string name="read_from_file_s_failed">Read from file %s failed</string>
+    <string name="file_s_has_been_deleted">File %s has been deleted</string>
+    <string name="file_s_doesn_t_exist">File %s doesn\'t exist</string>
+    <string name="no_data_to_delete">No data to delete.</string>
+    <string name="saved_array_list_to_shared_preferences">Saved Array List to Shared preferences.</string>
+    <string name="search">Search</string>
 
 </resources>
